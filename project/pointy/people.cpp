@@ -1,6 +1,4 @@
-#include <algorithm>
 #include <iostream>
-#include <set>
 #include <string>
 using std::cout, std::cin, std::endl, std::string;
 
@@ -14,11 +12,20 @@ void set_student(string *, int *, float *);
 
 int main()
 {
+
     int n;
     int *ptr;
 
+
     ptr = new int [n];
 
+
+    bool stop = false;
+    while (stop == false)
+    {
+        cout << "enter thy name:" << "\n>";
+
+    }
 
 
 
