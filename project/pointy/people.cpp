@@ -12,10 +12,8 @@ void set_student(string *, int *, float *);
 
 int main()
 {
-
-    int n;
-
     ptr = &x;
+    cout << ptr << "\n";
 
     bool stop = false;
     while (stop == false)
@@ -25,9 +23,13 @@ int main()
         cin >> ptr -> name;
 
         cout << ptr -> name << "\n";
+
+        stop = true;
     }
 
+    cout << x.name << endl;
 
+    cout << ptr << "\n";
 
     delete[ ] ptr;
 
@@ -37,5 +39,5 @@ int main()
 
 void set_student(string name, int id, float grade_avg)
 {
-
+    return;
 }
