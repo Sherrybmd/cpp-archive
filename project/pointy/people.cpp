@@ -6,7 +6,7 @@ struct students {
     string name;
     int id;
     float grade_avg;
-};
+}x, *ptr;
 
 void set_student(string *, int *, float *);
 
@@ -14,17 +14,17 @@ int main()
 {
 
     int n;
-    int *ptr;
 
-
-    ptr = new int [n];
-
+    ptr = &x;
 
     bool stop = false;
     while (stop == false)
     {
         cout << "enter thy name:" << "\n>";
 
+        cin >> ptr -> name;
+
+        cout << ptr -> name << "\n";
     }
 
 
