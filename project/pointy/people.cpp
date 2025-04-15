@@ -1,60 +1,81 @@
+#include <stdlib.h>
 #include <iostream>
 #include <string>
+
 using std::cout, std::cin, std::endl, std::string;
+
 
 struct students {
     string name;
     int id;
     float grade_avg;
-}*ptr;
+};
 
 void set_student(string *, int *, float *);
 
+
 int main()
 {
-    ptr = &*ptr;
-    students *ptr = new students;  //weewoo weewoo !!
+    int rep = 0;
+    int *prep;
+    prep = &rep;
 
-    cout << ptr << "\n";
+    students *ptr = new students[40];   // max is 40 students, not sure how to
+                                        // increase without vector
 
     bool stop = false;
     while (stop == false)
     {
-        char choice = '';
+        system("clear");
 
         cout << "enter thy name:" << "\n>";
-        cin >> ptr -> name;
+        cin >> ptr[*prep].name;
 
         cout << "enter thy number (please):" << "\n>";
-        cin >> ptr -> id;
+        cin >> ptr[*prep].id;
 
         cout << "enter thy grade:" << "\n>";
-        cin >> ptr -> grade_avg;
+        cin >> ptr[*prep].grade_avg;
 
-        cout << "your name is: " << ptr -> name << "\n"
-             << "your id is: " << ptr -> id << "\n"
-             << "your grade is: " << ptr -> grade_avg << "\n"
-             << endl;
+        ++*prep;
 
-
+        system("clear");
+        char choice;
         cout << "continue?: y/n" << "\n";
         cin >> choice;
+
 
         if (choice == 'n' || choice == 'N')
         {
             stop = true;
+
+            system("clear");
+            cout << "proccess stopped" << "\n";
         }
 
-        ptr = new student x;
-        students *ptr = new students;
     }
 
+    cout << "\n" << "OUTPUT: " << "\n";
 
-    cout << ptr << "\n";
+    cout << "===================" << "\n";
 
-    delete ptr;
+    //iterate and output
+    for(int i=0; i<*prep; i++)
+    {
 
-    cout << endl;
+
+        cout << "------------------" << "\n"
+             << i+1 << "\n"
+             << "> name: " << ptr[i].name << "\n"
+             << "> id: " << ptr[i].id << "\n"
+             << "> avg grade: " << ptr[i].grade_avg << "\n";
+    }
+    cout << "===================" << "\n";
+
+//free mem
+    delete [] ptr;
+
+    cout << "\n\n";
     return 0;
 }
 
