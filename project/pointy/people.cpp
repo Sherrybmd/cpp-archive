@@ -2,7 +2,16 @@
 #include <iostream>
 #include <string>
 using std::cout, std::cin, std::endl, std::string;
-
+/*
+    * DISCLAIMER:
+    *       fuck c++
+    *       email: shahryar.babamohamadi.2006@gmail.com
+    *
+    * view with full commits in my github:
+    *        https://github.com/Sherrybmd/cpp-archive/blob/main/project/pointy/people.cpp
+    *
+    * i made this with vim btw
+*/
 struct students {
     string name;
     int id;
