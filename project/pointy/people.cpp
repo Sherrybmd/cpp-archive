@@ -6,12 +6,13 @@ struct students {
     string name;
     int id;
     float grade_avg;
-}x,*ptr;
+}*ptr;
 
 void set_student(string *, int *, float *);
 
 int main()
 {
+    ptr = &*ptr;
     students *ptr = new students;  //weewoo weewoo !!
 
     cout << ptr << "\n";
@@ -19,6 +20,8 @@ int main()
     bool stop = false;
     while (stop == false)
     {
+        char choice = '';
+
         cout << "enter thy name:" << "\n>";
         cin >> ptr -> name;
 
@@ -28,14 +31,24 @@ int main()
         cout << "enter thy grade:" << "\n>";
         cin >> ptr -> grade_avg;
 
+        cout << "your name is: " << ptr -> name << "\n"
+             << "your id is: " << ptr -> id << "\n"
+             << "your grade is: " << ptr -> grade_avg << "\n"
+             << endl;
 
-        stop = true;
+
+        cout << "continue?: y/n" << "\n";
+        cin >> choice;
+
+        if (choice == 'n' || choice == 'N')
+        {
+            stop = true;
+        }
+
+        ptr = new student x;
+        students *ptr = new students;
     }
 
-    cout << "your name is: " << ptr -> name << "\n"
-         << "your id is: " << ptr -> id << "\n"
-         << "your grade is: " << ptr -> grade_avg << "\n"
-         << endl;
 
     cout << ptr << "\n";
 
