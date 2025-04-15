@@ -1,9 +1,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-
 using std::cout, std::cin, std::endl, std::string;
-
 
 struct students {
     string name;
@@ -11,11 +9,23 @@ struct students {
     float grade_avg;
 };
 
-void set_student(string *, int *, float *);
+void set_student();
+//void save_file();
+//void read_file();
 
-
+//main
 int main()
 {
+    set_student();
+
+    cout << "\n\n";
+    return 0;
+}
+
+
+void set_student()
+{
+
     int rep = 0;
     int *prep;
     prep = &rep;
@@ -59,11 +69,9 @@ int main()
 
     cout << "===================" << "\n";
 
-    //iterate and output
     for(int i=0; i<*prep; i++)
     {
-
-
+        //TODO: add write to file
         cout << "------------------" << "\n"
              << i+1 << "\n"
              << "> name: " << ptr[i].name << "\n"
@@ -74,12 +82,5 @@ int main()
 
 //free mem
     delete [] ptr;
-
-    cout << "\n\n";
-    return 0;
-}
-
-void set_student(string name, int id, float grade_avg)
-{
     return;
 }
