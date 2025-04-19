@@ -1,0 +1,45 @@
+STRING METHODS IN CPP
+                                                    ? => optional
+.compare
+.erase(start, howmany)
+.insert(index, whattoinsert)
+.clear()                        // empties the string
+.empty()                        //true if empty
+.resize(increasesizeby, ?addwhat)
+.at()
+.swap(stringname)
+
+.find_first_of()
+.find_last_of()
+
+.rfind(StringToFind)        //find from last to first occurence
+.copy()
+
+.push_back()
+.pop_back()
+.toupper()
+.tolower()
+
+
+
+HARD FUNCTIONS
+
+c_str()                         // return c style string
+.at()
+
+.what()
+    catch (out_of_range &e)             //error handling
+    {
+        cout <, "error: " << e.what() << endl;
+    }
+
+
+.find_first_of()
+    string name = "";
+    size_t pos = name.find_first_of("o");
+
+    if (pos!- string::npos)       //npos returns a number when not found
+        cout << "first o found at position: " << pos << endl;
+
+    else
+        error or whatever
