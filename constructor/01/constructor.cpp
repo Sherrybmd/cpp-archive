@@ -5,31 +5,36 @@ using namespace std;
 class test
 {
     public:
+        string name;
+        int age;
+
+
         // constructor
-        test()
+        test(string n, int a)
         {
             cout << "constructor called" << endl;
+            name = n;
+            age = a;
         }
+
+
         // destructor
-
         ~test()
-    {
+        {
+            cout << "destructing" << endl;
+        }
 
-        cout << "destructing" << endl;
-    }
+
+        void display()
+        {
+            cout << name << " " << age << "\n";
+        }
 };
 
 int main()
 {
-    test t1;  // constructor for t1 called
-    int a = 1;
-
-    if(a==1)
-    {
-        test t2; // constructor for t2 called
-
-    } // destructed t2
-
-
+    test t1("yo",15);
+    t1.display();
     return 0;
+
 } // destructed t1
