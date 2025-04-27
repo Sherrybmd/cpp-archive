@@ -16,6 +16,7 @@ class test
             name = n;
             age = a;
         }
+        // test(string n, int a) : name(n), age(a);
 
 
         // destructor
