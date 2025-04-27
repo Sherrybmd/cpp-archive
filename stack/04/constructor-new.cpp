@@ -32,12 +32,17 @@ public:
 int main()
 {
     MyClass obj1;          // default constructor
-    MyClass obj2(10, 20);  // parametr constructor
-    MyClass obj3 = obj2;   // copy constructor
-
     obj1.display();
+    cout << "\n";
+
+    MyClass obj2(10, 20);  // parametr constructor
     obj2.display();
+    cout << "\n";
+
+    MyClass obj3 = obj2;   // copy constructor
     obj3.display();
+    cout << "\n";
+
 
     cout << "\n";
     return 0;
