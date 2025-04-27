@@ -8,7 +8,7 @@ private:
 
 public:
 
-    BankAccount(int initial_balance)
+    BankAccount(int initial_balance = 0)
     {
         balance = initial_balance;
     }
