@@ -35,8 +35,8 @@ int main()
     home.setArea(5);
 
     cout << home.getRooms() << endl;
-    cout <<    home.getBathrooms() << endl;
-    cout <<    home.getArea() << endl;
+    cout << home.getBathrooms() << endl;
+    cout << home.getArea() << endl;
 
     cout << "\n";
 }

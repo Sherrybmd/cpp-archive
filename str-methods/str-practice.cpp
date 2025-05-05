@@ -29,17 +29,18 @@ int main()
     cout << "enter string to find in 'second'" << "\n>";
     cin >> str;
 
-    size_t found = second.find(str);
-    int finale = found + (str.length() - 1);
-    if (found != string::npos)
-    {
-        cout << "found " << str << " at " << found << " till " << finale << "\n";
-        cout << "replacing with 'cock'" << "\n";
-        second = second.replace(found, finale,  "cock");
-    }
-    else
-        cout << "ERR, not found..." << "\n";
+//    size_t found = second.find(str);
+//    int finale = found + (str.length() - 1);
+//    if (found != string::npos)
+//    {
+//        cout << "found " << str << " at " << found << " till " << finale << "\n";
+//        cout << "replacing with 'cock'" << "\n";
+//        second = second.replace(found, finale,  "cock");
+//    }
+//    else
+//       cout << "ERR, not found..." << "\n";
     //out
+
     cout << second << "\n";
 
 
