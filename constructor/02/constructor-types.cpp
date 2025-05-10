@@ -21,7 +21,7 @@ public:
 
 
     MyClass(const MyClass &obj) : x(obj.x), y(obj.y) {
-        cout << "Copy Coonstructor" << "\n";
+        cout << "Copy Constructor" << "\n";
     }
 
     void display() const {
