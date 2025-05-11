@@ -1,4 +1,8 @@
+#include <algorithm>
+#include <exception>
 #include <iostream>
+#include <new>
+#include <sstream>
 #include <string>
 #include <ctime>
 #include <cstdlib>
@@ -9,41 +13,80 @@ class bank
 {
 
 public:
-    const string currency = " Rial";
 
-    bool isBanned();
-    void Ban();
-    void unBan();
-    void accStat();
+    bool isBanned() { return banStatus; }
 
+    void Ban() { banStatus = 1; }
+    void unBan() { banStatus = 0; }
 
-    bool validateTransaction();
-    void deposit(long long unsigned int amount);
-    void withdraw(long long unsigned int amount);
-    void transfer(unsigned int targetID);
-    int getBalance(unsigned int yourID);
-
-    bank(string fname, string lname, unsigned int ID) : ID(0), balance(100000)
+    void deposit( long int amount)
     {
-        this->ID = ID;
-        this->firstName = fname;
-        this->lastName = lname;
-
-        if( ID ==0 )
-            cout << "id of 0 !" << "\n";
+        if ( isBanned() )
+        {
+            cout << "account not accessible" << "\n";
+            return;
+        }
+        balance += amount;
     }
+
+    void withdraw( long int amount)
+    {
+        if ( isBanned() )
+        {
+            cout << "account not accessible" << "\n";
+            return;
+        }
+        balance -= amount;
+    }
+
+    int getBalance() { return balance; }
+
+    int randomizeID()
+    {
+        srand(time(0));
+        long int ID = rand();
+        if( this->ID == ID )
+            return randomizeID();
+        return ID;
+    }
+
+    int getID() { return ID; }
+    string getName() { return (firstName+" "+lastName); }
+
+
+    //constructor
+    bank(string fname, string lname) : ID(randomizeID()), balance(100000)
+    {
+        firstName = fname;
+        lastName = lname;
+    }
+
+// variables
 private:
     bool banStatus = 0;
-    unsigned int ID;
 
-    long long unsigned int balance;
+    int ID;
+
+    long int balance;
+
     string firstName, lastName;
 };
 
 int main()
 {
+    bank account("shahryar", "baba");
+    account.deposit(50000);
+    account.withdraw(25000);
+
+    cout << "balance: " << account.getBalance() << "\n"
+        << "ban status: " << account.isBanned() << "\n";
+
+    account.Ban();
+    cout << "ban status: " << account.isBanned() << "\n";
+
+    cout << "id is: " << account.getID() << "\n";
+    cout << "name is: " << account.getName() << "\n";
 
     cout << "\n";
     return 0;
 }
-
