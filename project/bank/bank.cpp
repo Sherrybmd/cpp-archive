@@ -1,8 +1,4 @@
-#include <algorithm>
-#include <exception>
 #include <iostream>
-#include <new>
-#include <sstream>
 #include <string>
 #include <ctime>
 #include <cstdlib>
