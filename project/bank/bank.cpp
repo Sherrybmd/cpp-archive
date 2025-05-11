@@ -8,22 +8,35 @@ using namespace std;
 
 class bank
 {
+    class transactions
+    {
+    protected:
+        int log[20];
+        int* logptr;
+        transactions() : log(), logptr(&log[0])
+        {
+
+        }
+    };
 public:
     const string currency = " Rial";
 
-    void Ban(bool ban = 1) { this->banStatus = ban; }
-    void unBan() { Ban(0); }
-    bool isBanned() { return banStatus; }
-    void accStat() { }
+    bool isBanned();
+    void Ban();
+    void unBan();
+    void accStat();
 
 
-    void addBalance() { }
-    int getBalance() { return }
+    bool validateTransaction();
+    void deposit(long long unsigned int amount);
+    void withdraw(long long unsigned int amount);
+    void transfer(unsigned int targetID);
+    int getBalance(unsigned int yourID);
 
 
 private:
     bool banStatus = 0;
-    unsigned int id;
+    unsigned int ID;
 
     long long unsigned int balance;
     string firstName, lastName;
