@@ -1,4 +1,3 @@
-#include <any>
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -8,13 +7,6 @@ using namespace std;
 
 class bank
 {
-    class transactions { }; // failed attempt to make a log system om
-    class accounts
-    {
-    public:
-        int ids[20];
-
-    };
 
 public:
     const string currency = " Rial";
@@ -31,10 +23,14 @@ public:
     void transfer(unsigned int targetID);
     int getBalance(unsigned int yourID);
 
-    bank(unsigned int ID) : ID(0), balance(100000)
+    bank(string fname, string lname, unsigned int ID) : ID(0), balance(100000)
     {
         this->ID = ID;
+        this->firstName = fname;
+        this->lastName = lname;
 
+        if( ID ==0 )
+            cout << "id of 0 !" << "\n";
     }
 private:
     bool banStatus = 0;
