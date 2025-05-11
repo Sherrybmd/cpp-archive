@@ -11,29 +11,31 @@ class bank
 public:
 
     bool isBanned() { return banStatus; }
-
     void Ban() { banStatus = 1; }
     void unBan() { banStatus = 0; }
+
 
     void deposit( long int amount)
     {
         if ( isBanned() )
         {
             cout << "account not accessible" << "\n";
-            return;
-        }
+            return; }
+
         balance += amount;
     }
+
 
     void withdraw( long int amount)
     {
         if ( isBanned() )
         {
             cout << "account not accessible" << "\n";
-            return;
-        }
+            return; }
+
         balance -= amount;
     }
+
 
     int getBalance() { return balance; }
 
@@ -76,7 +78,7 @@ int main()
 
     cout << "balance: " << account.getBalance() << "\n"
         << "ban status: " << account.isBanned() << "\n";
-
+    // set ban status to 1 from 0
     account.Ban();
     cout << "ban status: " << account.isBanned() << "\n";
 
