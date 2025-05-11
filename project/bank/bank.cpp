@@ -8,16 +8,14 @@ using namespace std;
 
 class bank
 {
-    class transactions
+    class transactions { }; // failed attempt to make a log system om
+    class accounts
     {
-    protected:
-        int log[20];
-        int* logptr;
-        transactions() : log(), logptr(&log[0])
-        {
+    public:
+        int ids[20];
 
-        }
     };
+
 public:
     const string currency = " Rial";
 
@@ -33,7 +31,11 @@ public:
     void transfer(unsigned int targetID);
     int getBalance(unsigned int yourID);
 
+    bank(unsigned int ID) : ID(0), balance(100000)
+    {
+        this->ID = ID;
 
+    }
 private:
     bool banStatus = 0;
     unsigned int ID;
@@ -48,3 +50,5 @@ int main()
     cout << "\n";
     return 0;
 }
+
+
