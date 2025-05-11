@@ -49,7 +49,7 @@ public:
     }
 
     int getID() { return ID; }
-    string getName() { return (firstName+" "+lastName); }
+    string getName() { return ( firstName +" "+ lastName ); }
 
 
     //constructor
@@ -59,14 +59,10 @@ public:
         lastName = lname;
     }
 
-// variables
 private:
     bool banStatus = 0;
-
     int ID;
-
     long int balance;
-
     string firstName, lastName;
 };
 
