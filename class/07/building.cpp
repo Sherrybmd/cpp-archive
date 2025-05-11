@@ -22,7 +22,7 @@ public:
     { return bathrooms; }
 
     void setArea(int num)
-    { rooms = num; }
+    { area = num; }
     int getArea()
     { return area; }
 };
@@ -30,12 +30,19 @@ public:
 int main()
 {
     Building home;
-    home.setRooms(23);
-    home.setBathrooms(99999);
-    home.setArea(5);
+    home.setRooms(3);
 
+    home.setBathrooms(3);
+
+    home.setArea(25);
+
+    cout << "rooms \n> ";
     cout << home.getRooms() << endl;
+
+    cout << "bathrooms \n> ";
     cout << home.getBathrooms() << endl;
+
+    cout << "area \n> ";
     cout << home.getArea() << endl;
 
     cout << "\n";
