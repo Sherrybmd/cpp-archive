@@ -15,6 +15,18 @@ public:
     void unBan() { banStatus = 0; }
 
 
+    bool checkPassword()
+    {
+        int enteredPin = 0;
+        cout << "enter thy password:\n>";
+        cin >> enteredPin;
+
+        if (enteredPin != pin)
+            return 0;
+
+        // password is correct
+        return 1;
+    }
     void deposit( long int amount)
     {
         if ( isBanned() )
@@ -22,7 +34,10 @@ public:
             cout << "account not accessible" << "\n";
             return; }
 
-        balance += amount;
+        if (checkPassword())
+            balance += amount;
+
+
     }
 
 
