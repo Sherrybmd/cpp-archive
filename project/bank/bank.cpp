@@ -53,7 +53,7 @@ public:
 
 
     //constructor
-    bank(string fname, string lname) : ID(randomizeID()), balance(100000)
+    bank(string fname, string lname, int password) : ID(randomizeID()), balance(100000), pin(password)
     {
         firstName = fname;
         lastName = lname;
@@ -63,12 +63,13 @@ private:
     bool banStatus = 0;
     int ID;
     long int balance;
+    int pin=0;
     string firstName, lastName;
 };
 
 int main()
 {
-    bank account("shahryar", "baba");
+    bank account("shahryar", "baba", 2020);
     account.deposit(50000);
     account.withdraw(25000);
 
