@@ -20,6 +20,7 @@ public:
         int enteredPin = 0;
         cout << "enter thy password:\n>";
         cin >> enteredPin;
+        cin.ignore();
 
         if (enteredPin != pin)
             return 0;
@@ -48,7 +49,8 @@ public:
             cout << "account not accessible" << "\n";
             return; }
 
-        balance -= amount;
+        if (checkPassword())
+            balance -= amount;
     }
 
 
@@ -58,6 +60,7 @@ public:
     {
         srand(time(0));
         long int ID = rand();
+
         if( this->ID == ID )
             return randomizeID();
         return ID;
@@ -90,6 +93,7 @@ int main()
 
     cout << "balance: " << account.getBalance() << "\n"
         << "ban status: " << account.isBanned() << "\n";
+
     // set ban status to 1 from 0
     account.Ban();
     cout << "ban status: " << account.isBanned() << "\n";
