@@ -9,7 +9,7 @@ int main() {
     float score;
     string name;
 
-    ofstream outputFile("output.dat", ios::out);
+    ofstream outputFile("../input/output.dat", ios::out);
 
     if( !outputFile)
     {
