@@ -16,18 +16,17 @@ public:
 int main()
 {
     system("clear");
-    myclass ob[3] = {1, 2, 3};
+    myclass ob[3];
+    ob[2].set_i(0);
+    ob[0] = ob[1] = ob[2];
+
     myclass *p;
-    int i;
 
     p = ob; // get start of array
-    for(i=0; i<3; i++)
+    for(int i=0; i<3; i++)
     {
         cout << p-> get_i() << endl;
         p++; // point to next object
-
-
-
     }
 
     return 0;
